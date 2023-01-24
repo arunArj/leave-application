@@ -22,5 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix'=>'v1','namespace'=>'App\http\controllers'],function(){
 
     Route::apiResource('companys',CompanyController::class);
+    Route::apiResource('departments',DepartmentsController::class);
 });
 

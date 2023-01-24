@@ -13,7 +13,7 @@ class StoreDepartmentsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class StoreDepartmentsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'department' => ['required','min:3'],
+            'reporting_emails' => ['array'],
+            'reporting_emails.*' => ['required','email'],
+
+        ];
+    }
+    protected function prepareForValidation()
+    {
+        $this->merge(['reporting_emails' => explode(",",rtrim($this->reporting_emails,","))]);
+    }
+
+    public function messages()
+    {
+        return [
+
+            'reporting_emails.*.email'  => 'Enter valid email ids',
+            'reporting_emails.0.required'  => 'please enter atleast one email id',
         ];
     }
 }

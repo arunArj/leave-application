@@ -37,7 +37,8 @@ class DepartmentsController extends Controller
      */
     public function store(StoreDepartmentsRequest $request)
     {
-        //
+        $dept =  Departments::create($request->all());
+        return redirect('/dashboard/departments');
     }
 
     /**
@@ -59,7 +60,7 @@ class DepartmentsController extends Controller
      */
     public function edit(Departments $departments)
     {
-        //
+        return view('departments.edit_department');
     }
 
     /**

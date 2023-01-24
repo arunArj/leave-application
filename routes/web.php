@@ -25,5 +25,6 @@ Route::group(['prefix'=>'dashboard','namespace' => 'App\Http\Controllers'],funct
     Route::put('/settings/{leaveSettings}','LeaveSettingsController@update');
 
     Route::get('/departments','DepartmentsController@index');
+    Route::post('/departments','DepartmentsController@store');
     Route::get('/departments/create','DepartmentsController@create');
 });
