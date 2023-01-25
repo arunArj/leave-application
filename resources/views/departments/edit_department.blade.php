@@ -11,12 +11,13 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Add Department!</h1>
                         </div>
-                        <form class="user" id="deptForm" method="post" action="/dashboard/departments">
+                        <form class="user" id="deptForm" method="post" action="/dashboard/departments/{{$department->id}}">
+                            @method('PUT')
                             @csrf
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-3 mb-sm-0">
                                     <label>Department</label>
-                                    <input type="text" name="department" value="{{old('department')}}" class="form-control form-control-user" id="exampleFirstName"
+                                    <input type="text" name="department" value="{{$department->department}}" class="form-control form-control-user" id="exampleFirstName"
                                         placeholder="Name of the Department">
                                         @if($errors->has('department'))
 
@@ -231,8 +232,8 @@ window.TagsInput = TagsInput;
         max : 10
     });
 
-    if("{{old('reporting_emails')}}"!=""){
-       var emails = "{{old('reporting_emails')}}"
+    if("{{$department->reporting_emails}}"!=""){
+       var emails ="{{$department->reporting_emails}}"
        emails = emails.split(',');
        tagInput1.addData(emails)
     }

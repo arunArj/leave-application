@@ -58,9 +58,9 @@ class DepartmentsController extends Controller
      * @param  \App\Models\Departments  $departments
      * @return \Illuminate\Http\Response
      */
-    public function edit(Departments $departments)
+    public function edit(Departments $department)
     {
-        return view('departments.edit_department');
+        return view('departments.edit_department',compact('department'));
     }
 
     /**
@@ -70,9 +70,12 @@ class DepartmentsController extends Controller
      * @param  \App\Models\Departments  $departments
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDepartmentsRequest $request, Departments $departments)
+    public function update(UpdateDepartmentsRequest $request, Departments $department)
     {
-        //
+        if(is_array($request->reporting_emails))
+        $reporting_emails = implode(",",$request->reporting_emails);
+        $department->update(['department'=>$request->department,'reporting_emails'=>$reporting_emails]);
+        return redirect()->back()->with('success','updated successfully');
     }
 
     /**

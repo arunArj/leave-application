@@ -13,10 +13,13 @@ class Departments extends Model
 
     protected function insertAndSetId(Builder $query, $attributes)
     {
+
         if(is_array($attributes['reporting_emails']))
         $attributes['reporting_emails']= implode(",", $attributes['reporting_emails']);
         $id = $query->insertGetId($attributes, $keyName = $this->getKeyName());
 
         $this->setAttribute($keyName, $id);
     }
+
+
 }

@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($departments as $item)
                             <tr>
-                                <td><a href="/dashboard/department/edit/{{$item->id}}">{{$item->department}}</td>
+                                <td><a href="/dashboard/departments/edit/{{$item->id}}">{{$item->department}}</td>
                                 <td>{{$item->reporting_emails}}</td>
 
                             </tr>

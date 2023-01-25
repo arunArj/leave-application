@@ -27,4 +27,7 @@ Route::group(['prefix'=>'dashboard','namespace' => 'App\Http\Controllers'],funct
     Route::get('/departments','DepartmentsController@index');
     Route::post('/departments','DepartmentsController@store');
     Route::get('/departments/create','DepartmentsController@create');
+    Route::get('/departments/edit/{department}','DepartmentsController@edit');
+    Route::put('/departments/{department}','DepartmentsController@update');
+    Route::delete('/departments/{department}','DepartmentsController@destroy');
 });

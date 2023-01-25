@@ -24,7 +24,7 @@ class StoreDepartmentsRequest extends FormRequest
     public function rules()
     {
         return [
-            'department' => ['required','min:3'],
+            'department' => ['required','min:3','unique:departments'],
             'reporting_emails' => ['array'],
             'reporting_emails.*' => ['required','email'],
 

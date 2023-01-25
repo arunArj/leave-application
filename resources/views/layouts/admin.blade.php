@@ -92,9 +92,11 @@
                     <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
 
-                            <a class="collapse-item" href="{{url('/dashboard/settings/edit')}}">Manage Leave Settings</a>
+                            <a class="collapse-item" href="{{url('/dashboard/departments/create')}}">Add Department</a>
+                            <a class="collapse-item" href="{{url('/dashboard/departments/')}}">Department List</a>
 
                         </div>
+
                     </div>
                 </li>
                 <li class="nav-item">
