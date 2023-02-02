@@ -84,8 +84,9 @@ class DepartmentsController extends Controller
      * @param  \App\Models\Departments  $departments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Departments $departments)
+    public function destroy(Departments $department)
     {
-        //
+        $department->delete();
+       return redirect('/dashboard/departments/')->with('sucees' ,'record removed');
     }
 }

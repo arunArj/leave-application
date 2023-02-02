@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\EmployeeDetails;
 use App\Http\Requests\StoreEmployeeDetailsRequest;
 use App\Http\Requests\UpdateEmployeeDetailsRequest;
+use App\Models\Company;
 
 class EmployeeDetailsController extends Controller
 {
@@ -15,7 +16,9 @@ class EmployeeDetailsController extends Controller
      */
     public function index()
     {
-        //
+        $employees = EmployeeDetails::paginate(5);
+
+        return view('employee_details.employee_list',compact('employees'));
     }
 
     /**
@@ -25,7 +28,8 @@ class EmployeeDetailsController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all(['id','company_name']);
+        return view('employee_details.add_employee',compact('companies'));
     }
 
     /**

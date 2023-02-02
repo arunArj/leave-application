@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\EmployeeDetails;
 use Illuminate\Database\Seeder;
 
 class EmployeeDetailsSeeder extends Seeder
@@ -13,6 +14,8 @@ class EmployeeDetailsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        EmployeeDetails::factory()
+            ->count(25)
+            ->create();
     }
 }

@@ -21,13 +21,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($departments as $item)
+                        @forelse($departments as $item)
                             <tr>
                                 <td><a href="/dashboard/departments/edit/{{$item->id}}">{{$item->department}}</td>
                                 <td>{{$item->reporting_emails}}</td>
 
                             </tr>
-                        @endforeach
+                            @empty
+                            <tr><td colspan="2" class="empty-record"> <h3>no records found</h3></td></tr>
+                        @endforelse
 
                     </tbody>
                 </table>

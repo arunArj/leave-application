@@ -44,6 +44,13 @@
                             </button>
 
                         </form>
+                        <form method="POST" action="/dashboard/departments/{{$department->id}}">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn form-user btn-danger btn-round btn-block mt-2" onclick="return confirm('Are you sure you want to delete this department?');">
+                                Delete
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -11318,3 +11318,12 @@ form .error{
     display: inline-block;
     cursor: pointer;
 }
+.empty-record h3{
+    font-size: 24px;
+    font-family: fangsong;
+    text-align: center;
+    align-items: center;
+}
+.btn-round{
+    border-radius: 4rem !important;
+}

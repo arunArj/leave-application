@@ -30,4 +30,7 @@ Route::group(['prefix'=>'dashboard','namespace' => 'App\Http\Controllers'],funct
     Route::get('/departments/edit/{department}','DepartmentsController@edit');
     Route::put('/departments/{department}','DepartmentsController@update');
     Route::delete('/departments/{department}','DepartmentsController@destroy');
+
+    //Route::get('/employees','EmployeeDetailsController@index');
+    Route::resource('employees', EmployeeDetailsController::class);
 });

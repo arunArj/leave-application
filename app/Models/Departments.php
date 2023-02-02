@@ -21,5 +21,9 @@ class Departments extends Model
         $this->setAttribute($keyName, $id);
     }
 
+    public function employeeDetails(){
+        return $this->hasMany(EmployeeDetails::class);
+    }
+
 
 }
